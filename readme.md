@@ -17,11 +17,11 @@ Lastly, I filtered the set to the desired 2 row output and inserted it into an E
 
 ## Data Considerations
 
-The datatypes I defined for the dataset was based on familiarity with the provided column (Key) names.
+The datatypes I defined for the dataset was based on familiarity with the provided column (Key) names. For example, the balance column is typically a monetary value so a float datatype worked best. For effective_date, this is obviously a date format but with a mix of formatting and timestamps.
 
 In order to convert the balance column to a float type I had to remove several string and spacing characters. This would make this field suspect in the future and a more programatic approach to cleanse this data is needed. Also, handling NULL string value presented a challenge and further called into question the source data.
 
-One assumption that was necessary was the formatting of effective_date for account_number 1006; it could be either MM/DD/YYYY or DD/MM/YYYY format without knowing which one for certain.
+One assumption that was necessary was the formatting of effective_date for account_number 1006; it could be either MM/DD/YYYY or DD/MM/YYYY format without knowing which one for certain. Other values provided for effective_date were tenuous and would need further clarification in order to capture the correct information.
 
 ## Postgres Setup
 Start a local postgres server:
