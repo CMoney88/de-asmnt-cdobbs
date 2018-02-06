@@ -10,7 +10,7 @@ debucket = s3.Bucket('data-engineer-assessment')
 
 #Load inputfile into memory using StringIO
 inputfile = StringIO.StringIO()
-debucket.download_fileobj('InputFile.dat', inputfile)
+debucket.download_fileobj('SampleFile.dat', inputfile)
 
 #Create a simple string
 newStr = inputfile.getvalue()
@@ -47,7 +47,7 @@ dfpivot2['EffectiveDate'] = pd.to_datetime(dfpivot2['EffectiveDate'])
 #Rename columns to match postgres table schema
 dfpivot3 = dfpivot2.rename(columns={
 'AccountNumber':'account_number',
-'CustomerName':'customer_name',
+'CompanyName':'company_name',
 'EffectiveDate':'effective_date',
 'Status':'status',
 'Balance':'balance'})
